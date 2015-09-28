@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TestApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/angular/angular.min.js.map"></script>
+
+</head>
+<body ng-controller="MainControllers">
+<button ng-click="toggle()" class="showCandidates">Show Candidates</button>
+<div ng-hide="showNames">
+    <ul>
+        <li ng-repeat="person in republicans">{{person.name}}</li>
+        <li ng-repeat="person in democrats">{{person.name}}</li>
+    </ul>
+</div>
+<button ng-click="getWinner()" class="pickCandidate">Pick Candidate</button>
+<p>{{winner.name}}</p>
+<script src="/assets/scripts/app.min.js"></script>
+</body>
+</html>
