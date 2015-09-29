@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="TestApp">
-<head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Presidential Voting App</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/styles.css" />
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/vendor/angular/angular.min.js"></script>
     <script src="/vendor/angular/angular.min.js.map"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </head>
 <body ng-controller="MainControllers">
-<button ng-click="toggle()" class="showCandidates">Show Candidates</button>
-<div ng-hide="showNames">
-    <ul>
-        <li ng-repeat="person in republicans">{{person.name}}</li>
-        <li ng-repeat="person in democrats">{{person.name}}</li>
-    </ul>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Presidential Voting Application</h1>
+    </div>
+    <div class="col-md-8">
+        <button ng-click="toggle()" class="btn-primary center-block">Show Candidates!</button>
+        <div ng-hide="showNames">
+            <div class="col-md-6">
+                <h3 class="text-center">Republicans</h3>
+                <ul class="text-center" id="ulLeft">
+                    <li ng-repeat="person in republicans">{{person.name}}</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Democrats</h3>
+                <ul class="text-center" id="ulRight">
+                    <li ng-repeat="person in democrats">{{person.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button ng-click="getWinner(); toggleWinner()" class="btn-danger center-block">Show Winner!</button>
+        <div ng-hide="showWinner" class="showWinner">
+            <p class="text-center">{{winner.name}}</p>
+        </div>
+    </div>
 </div>
-<button ng-click="getWinner()" class="pickCandidate">Pick Candidate</button>
-<p>{{winner.name}}</p>
+
+
 <script src="/assets/scripts/app.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+ul{
+    list-style-type: none;
+}
+#ulLeft{
+    padding-right: 50px;
+}
+
+#ulRight{
+    padding-right: 40px;
+}
+
+html body{
+    background: url(/assets/americanFlag.jpg);
+    background-size: cover;
+}
+
+h3{
+    color: blue;
+    font-weight: bolder;
+}
+
+.presidentHeading{
+    padding: 20px 0 0 0;
+}
+
+.col-md-6, .showWinner {
+    margin-top: 100px;
+    background-color: white;
+    opacity: .8;
+    font-size: 20px;
+    line-height: 3em;
+    font-weight: bold;
+    color: black;
+}
+
+.btn-primary, .btn-danger{
+    padding: 30px;
+    font-size: 20px;
+}

@@ -8,6 +8,7 @@ app.controller("MainControllers",['$scope', '$http', function($scope, $http){
     $scope.democrats = [];
     $scope.winner = [];
     $scope.showNames = true;
+    $scope.showWinner = true;
 
     var getRepublicans = function() {
         $http.get('/getRepublicans').then(function (res) {
@@ -35,6 +36,17 @@ app.controller("MainControllers",['$scope', '$http', function($scope, $http){
         $scope.showNames = !$scope.showNames;
     };
 
+    $scope.toggleWinner = function(){
+        $scope.showWinner = !$scope.showWinner;
+    };
+
     getRepublicans();
     getDemocrats();
 }]);
+
+$('.btn-danger').click(function(){
+    $('.presidentHeading').remove();
+
+    $('p').prepend("<h3 class='presidentHeading'>Your New President!</h3>");
+});
+
